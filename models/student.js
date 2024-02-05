@@ -1,22 +1,37 @@
 const mongoose = require('mongoose')
 
 const StudentSchema = new mongoose.Schema({
-    name: { 
+    firstName: { 
         type: String,
-        required: [true, 'Please provide a title for the Note']
+        required: [true, 'Please provide the first name of the student'],
+        minlength: 3,
+        maxlegth: 50,
     },
-    subject: {
+    secondName: { 
         type: String,
-        required: [true, 'Please enter the subject of your Note']
+        required: [true, 'Please provide the second name of the student'],
+        minlength: 3,
+        maxlegth: 50,
     },
-    content: {
+    surname: { 
         type: String,
-        required: [true, 'Please enter the contents of your Note']
+        required: [true, 'Please provide the surname name of the student'],
+        minlength: 3,
+        maxlegth: 50,
     },
-    createdBy: {
+    dateOfBirth:{
+        type : Date,
+        required: [true, 'Please the student date of birth']
+    },
+    admNumber:{
+        type : Number,
+        required: [true, 'Please provide the student admission number']
+    },
+    classId:{
         type: mongoose.Types.ObjectId,
-        ref: 'User',
-        required: [true, 'Please provide name of author']}
-}, {timestamps: true})
+        required: true,
+        ref: 'class'
+    }
+})
 
-module.exports = mongoose.model('Note', NoteSchema)
+module.exports = mongoose.model('Student',StudentSchema)
