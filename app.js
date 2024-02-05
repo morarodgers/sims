@@ -7,13 +7,13 @@ const xss = require('xss-clean')
 const rateLimiter = require('express-rate-limit')
 
 const connectDB = require('./db/connect');
-const myclass = require('./models/class');
-const student = require('./models/student');
+//const myclass = require('./models/class');
+//const student = require('./models/student');
 
 const express = require('express');
 const app = express();
 
-//routes
+//my routers
 const authRouter = require('./routes/auth');
 const studentsRouter = require('./routes/students');
 
