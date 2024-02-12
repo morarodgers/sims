@@ -30,7 +30,7 @@ const StudentSchema = new mongoose.Schema({
     classId:{
         type: mongoose.Types.ObjectId,
         required: true,
-        ref: 'class'
+        //ref: 'class'
     }
 })
 
